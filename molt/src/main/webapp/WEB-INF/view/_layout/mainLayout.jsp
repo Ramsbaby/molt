@@ -5,14 +5,13 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>molt Test Project</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <title>Home | E-Shopper</title>
 
     <!-- common css -->
 	<tiles:useAttribute id="cssList" name="cssFileList" classname="java.util.List" />
@@ -47,20 +46,13 @@
 	<noscript class="noScriptTitle">자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
 	
 	<!-- header -->
-	<%-- <div class="header-v4">
 	<tiles:insertAttribute name="header-topbar"/>
+
 	<tiles:insertAttribute name="header-menu"/>
-	</div> --%>
-	<div class="mainbg">
-		<tiles:insertAttribute name="header-menu"/>
-	    
-	    <!-- body -->
-		<tiles:insertAttribute name="content"/>
-	</div>
+    
+    <!-- body -->
+	<tiles:insertAttribute name="content"/>
 	<!-- footer -->
-    <%-- <div class="footer-v1">
-		<tiles:insertAttribute name="footer"/>
-	</div> --%>
 	<tiles:insertAttribute name="footer"/>
 	
 	<!-- biz js -->

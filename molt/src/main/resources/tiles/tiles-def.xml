@@ -15,27 +15,55 @@
 
 	<!-- default layout -->
 	<definition name="defaultLayout" 				template="/WEB-INF/view/_layout/defaultLayout.jsp">
-		<put-attribute name="header-menu" 			value="/WEB-INF/view/_layout/include/header-menu.jsp"/>
+		<put-attribute name="header-topbar" 		value="/WEB-INF/view/_layout/include/header-topbar.jsp"/>
 		<put-attribute name="content" 				value="" />
 		<put-attribute name="footer" 				value="/WEB-INF/view/_layout/include/footer.jsp"/>
 		
 		<put-list-attribute name="cssFileList">
+			<add-attribute value="/common/css/bootstrap.min.css"/>
+			<add-attribute value="/common/css/font-awesome.min.css"/>
+			<add-attribute value="/common/css/prettyPhoto.css"/>
+			<add-attribute value="/common/css/price-range.css"/>
+			<add-attribute value="/common/css/animate.css"/>
+			<add-attribute value="/common/css/main.css"/>
+			<add-attribute value="/common/css/responsive.css"/>
 		</put-list-attribute>
 		
 		<put-list-attribute name="jsFileList">
+			<add-attribute value="/common/js/jquery.js"/>
+			<add-attribute value="/common/js/bootstrap.min.js"/>
+			<add-attribute value="/common/js/jquery.scrollUp.min.js"/>
+			<add-attribute value="/common/js/price-range.js"/>
+			<add-attribute value="/common/js/jquery.prettyPhoto.js"/>
+			<add-attribute value="/common/js/main.js"/>
+			<add-attribute value="/common/js/webtoolkit.md5.js"/>
 		</put-list-attribute>
 	</definition>
 	
 	<!-- main layout -->
 	<definition name="mainLayout" 				template="/WEB-INF/view/_layout/mainLayout.jsp">
+		<put-attribute name="header-topbar" 		value="/WEB-INF/view/_layout/include/header-topbar.jsp"/>
 		<put-attribute name="header-menu" 			value="/WEB-INF/view/_layout/include/header-menu.jsp"/>
 		<put-attribute name="content" 				value="" />
 		<put-attribute name="footer" 				value="/WEB-INF/view/_layout/include/footer.jsp"/>
 		
 		<put-list-attribute name="cssFileList">
+			<add-attribute value="/common/css/bootstrap.min.css"/>
+			<add-attribute value="/common/css/font-awesome.min.css"/>
+			<add-attribute value="/common/css/prettyPhoto.css"/>
+			<add-attribute value="/common/css/price-range.css"/>
+			<add-attribute value="/common/css/animate.css"/>
+			<add-attribute value="/common/css/main.css"/>
+			<add-attribute value="/common/css/responsive.css"/>
 		</put-list-attribute>
 		
 		<put-list-attribute name="jsFileList">
+			<add-attribute value="/common/js/jquery.js"/>
+			<add-attribute value="/common/js/bootstrap.min.js"/>
+			<add-attribute value="/common/js/jquery.scrollUp.min.js"/>
+			<add-attribute value="/common/js/price-range.js"/>
+			<add-attribute value="/common/js/jquery.prettyPhoto.js"/>
+			<add-attribute value="/common/js/main.js"/>
 		</put-list-attribute>
 	</definition>
 

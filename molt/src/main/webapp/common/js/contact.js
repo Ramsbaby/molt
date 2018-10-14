@@ -32,7 +32,7 @@ jQuery(function($) {'use strict',
 		clickable: false
 	});
 
-	var image = 'images/map-icon.png';
+	var image = '/common/images/map-icon.png';
 	map.addMarker({
 		lat: 43.1580159,
 		lng: -77.6030777,
