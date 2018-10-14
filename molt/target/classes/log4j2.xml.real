@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss.SSS}][%-5p] %l : %m%n" />
+        </Console>
+
+        <RollingFile name="rollingFile" fileName="/home/molt/www2/safekpsi/logs/molt.log" filePattern="/home/molt/www2/safekpsi/logs/molt.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="[%d{HH:mm:ss.SSS}][%-5p] %l : %m%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+
+    <Loggers>
+        <Logger name="java.sql" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </Logger>
+        <logger name="java.sql.Statement" level="DEBUG" additivity="false" >
+            <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </logger>
+        <logger name="java.sql.PreparedStatement" level="DEBUG" additivity="false" >
+                <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </logger>
+        <logger name="java.sql.ResultSet" level="DEBUG" additivity="false" >
+                <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </logger>
+        <Logger name="egovframework" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </Logger>
+          <!-- log SQL with timing information, post execution -->
+        <Logger name="jdbc.sqltiming" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </Logger>
+        <Logger name="org.springframework" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </Logger>
+        <Root level="ERROR">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>

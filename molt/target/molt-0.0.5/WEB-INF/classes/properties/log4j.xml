@@ -1,0 +1,108 @@
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration 
+	xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	
+	<!-- CONSOLE Log -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- 
+			<param name="ConversionPattern" value="[%5p] %l - %d{HH:mm:ss.SSS}%n      + %m%n" />
+			 -->
+			<param name="ConversionPattern" value="[%d{HH:mm:ss.SSS}][%-5p] %l : %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- File Log -->
+	<appender name="ROLLING" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="/logs/molt.log"/>
+	    <param name="Append" value="true"/>
+	  	<param name="MaxFileSize" value="10MB"/>
+	  	<param name="MaxBackupIndex" value="100"/> 
+	  	<layout class="org.apache.log4j.PatternLayout">
+	  		<!-- 
+	  	    <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSS}] %-5p %C{1}.%M(%F:%L) : %m%n"/>
+	  	    -->
+	  	    <param name="ConversionPattern" value="[%d{HH:mm:ss.SSS}][%-5p] %l : %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- WiSEViewer Configuration -->
+	<logger name="egovframework" additivity="false" >
+		<!--  level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<!-- Spring Configuration -->
+
+	<logger name="org.springframework" additivity="false" >
+		<!--  level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<!-- log SQL with timing information, post execution -->
+	<logger name="jdbc.sqltiming" additivity="false">
+		<!-- level value="INFO" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<!-- SQL Configuration -->
+	<logger name="jdbc.sqlonly" additivity="false" >
+		<!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<!-- Apache Configuration 
+	<logger name="org.apache" additivity="false" >
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	-->
+	
+	<logger name="java.sql.Connection" additivity="false" >
+		<!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="java.sql.Statement" additivity="false" >
+		<!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="java.sql.PreparedStatement" additivity="false" >
+		<!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+
+	<logger name="java.sql.ResultSet" additivity="false" >
+		<!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<logger name="org.apache.ibatis" additivity="false">
+		<!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<logger name="org.springframework.security" additivity="false">
+        <!-- level value="DEBUG" -->
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+    </logger>                                
+
+	<root>
+		<level value="OFF" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+</log4j:configuration>

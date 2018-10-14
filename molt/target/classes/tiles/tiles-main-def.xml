@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<!-- 메인화면 -->
+	<definition name="front/main" extends="mainLayout">
+		<put-attribute name="content" value="/WEB-INF/view/front/main/main.jsp" />
+
+		<put-list-attribute name="cssBizFileList">
+			<add-attribute value=""/>
+		</put-list-attribute>
+
+		<put-list-attribute name="jsBizFileList">
+		</put-list-attribute>
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+	<settings enhancementEnabled="true" 
+			cacheModelsEnabled="false"
+			maxRequests="30" 
+			maxSessions="10"
+			maxTransactions="5"
+			useStatementNamespaces="true"/> 
+
+	<sqlMap resource="com/molt/log/web/service/impl/WebLog_sqlmap.xml"/>
+	
+	
+</sqlMapConfig>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="bizError" template="/common/error.jsp" />
+	<definition name="dataAccessFailure" template="/common/dataAccessFailure.jsp" />
+	<definition name="transactionFailure" template="/common/transactionFailure.jsp" />
+	<definition name="egovError" template="/common/egovError.jsp" />
+
+	<!-- ##################### -->
+	<!-- FRONT                 -->
+	<!-- ##################### -->
+
+	<!-- default layout -->
+	<definition name="defaultLayout" 				template="/WEB-INF/view/_layout/defaultLayout.jsp">
+		<put-attribute name="header-menu" 			value="/WEB-INF/view/_layout/include/header-menu.jsp"/>
+		<put-attribute name="content" 				value="" />
+		<put-attribute name="footer" 				value="/WEB-INF/view/_layout/include/footer.jsp"/>
+		
+		<put-list-attribute name="cssFileList">
+		</put-list-attribute>
+		
+		<put-list-attribute name="jsFileList">
+		</put-list-attribute>
+	</definition>
+	
+	<!-- main layout -->
+	<definition name="mainLayout" 				template="/WEB-INF/view/_layout/mainLayout.jsp">
+		<put-attribute name="header-menu" 			value="/WEB-INF/view/_layout/include/header-menu.jsp"/>
+		<put-attribute name="content" 				value="" />
+		<put-attribute name="footer" 				value="/WEB-INF/view/_layout/include/footer.jsp"/>
+		
+		<put-list-attribute name="cssFileList">
+		</put-list-attribute>
+		
+		<put-list-attribute name="jsFileList">
+		</put-list-attribute>
+	</definition>
+
+	<!-- ajax layout -->	
+	<definition name="ajaxLayout" 				template="/WEB-INF/view/_layout/ajaxLayout.jsp">
+		<put-attribute name="content" 				value="" />
+	</definition>
+</tiles-definitions>

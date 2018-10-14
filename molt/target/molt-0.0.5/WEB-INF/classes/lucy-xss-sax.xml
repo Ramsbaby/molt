@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns="http://www.nhncorp.com/lucy-xss"
+	extends="lucy-xss-superset-sax.xml">
+	<elementRule>
+		<element name="iframe" disable="true" />
+		<element name="script" disable="true" />
+	</elementRule>
+
+	<attributeRule>
+		<attribute name="src">
+			<allowedPattern><![CDATA[['"]?\s*http://.*]]></allowedPattern>
+		</attribute>
+		<attribute name="href">
+			<notAllowedPattern><![CDATA[(?i:script)]]></notAllowedPattern>
+			<notAllowedPattern><![CDATA[(?i:\.css)]]></notAllowedPattern>
+		</attribute>
+		<attribute name="style">
+			<notAllowedPattern><![CDATA[(?i:expression)]]></notAllowedPattern>
+			<notAllowedPattern><![CDATA[(?i:alert)]]></notAllowedPattern>
+		</attribute>
+	</attributeRule>
+</config>

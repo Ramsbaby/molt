@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC 
+    "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" 
+    "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+
+    <formset>
+        <form name="authorManageVO">
+        	<field property="authorCode" depends="required">
+        		<arg0 key="AuthorManageVO.authorCode" />
+			</field>
+        	<field property="authorNm" depends="required">
+        		<arg0 key="AuthorManageVO.authorNm" />
+			</field>
+        	<field property="authorOrdr" depends="required">
+        		<arg0 key="AuthorManageVO.authorOrdr" />
+			</field>
+        	<field property="authorDc" depends="required">
+        		<arg0 key="AuthorManageVO.authorDc" />
+			</field>
+        </form>
+    </formset>
+    
+    <formset>
+        <form name="progrmManageVO">
+        	<field property="progrmFileNm" depends="required">
+        		<arg0 key="ProgrmManageVO.progrmFileNm" />
+			</field>
+        	<field property="progrmStrePath" depends="required">
+        		<arg0 key="ProgrmManageVO.progrmStrePath" />
+			</field>
+        	<field property="progrmKoreanNm" depends="required">
+        		<arg0 key="ProgrmManageVO.progrmKoreanNm" />
+			</field>
+        	<field property="URL" depends="required">
+        		<arg0 key="ProgrmManageVO.url" />
+			</field>
+        </form>
+    </formset>
+    
+    <formset>
+        <form name="mberManageVO">
+        	<field property="mberId" depends="required">
+        		<arg0 key="MberManageVO.mberId" />
+			</field>
+        	<field property="mberNm" depends="required">
+        		<arg0 key="MberManageVO.mberNm" />
+			</field>
+        	<field property="mobile" depends="required, mask">
+        		<arg0 key="MberManageVO.mobile" />
+        		<msg name="mask" key="핸드폰번호가 잘못된 형식입니다." />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^\d{2,3}-\d{3,4}-\d{4}$</var-value>
+				</var>
+			</field>
+        	<field property="email" depends="required, email">
+        		<arg0 key="MberManageVO.email" />
+			</field>
+        	<field property="authorCode" depends="required">
+        		<arg0 key="MberManageVO.authorCode" />
+			</field>
+        	<field property="mberGrpCd" depends="required">
+        		<arg0 key="MberManageVO.mberGrpCd" />
+			</field>
+        	<field property="mberSttus" depends="required">
+        		<arg0 key="MberManageVO.mberSttus" />
+			</field>
+        </form>
+    </formset>
+
+    <formset>
+        <form name="menuManageVO">
+        	<field property="menuNo" depends="required">
+        		<arg0 key="MenuManageVO.menuNo" />
+			</field>
+        	<field property="menuOrdr" depends="required">
+        		<arg0 key="MenuManageVO.menuOrdr" />
+			</field>
+        	<field property="menuNm" depends="required">
+        		<arg0 key="MenuManageVO.menuNm" />
+			</field>
+        	<field property="upperMenuId" depends="required">
+        		<arg0 key="MenuManageVO.upperMenuId" />
+			</field>
+        	<field property="progrmFileId" depends="required">
+        		<arg0 key="MenuManageVO.progrmFileId" />
+			</field>
+        </form>
+    </formset>
+
+    <formset>
+        <form name="cmmnCodeVO">
+        	<field property="codeId" depends="required">
+        		<arg0 key="CmmnCode.codeId" />
+			</field>
+        	<field property="codeIdNm" depends="required">
+        		<arg0 key="CmmnCode.codeIdNm" />
+			</field>
+        	<field property="useYn" depends="required">
+        		<arg0 key="CmmnCode.useYn" />
+			</field>
+        </form>
+    </formset>
+    
+    <formset>
+        <form name="cmmnDetailCode">
+        	<field property="codeId" depends="required">
+        		<arg0 key="cmmnDetailCode.codeId" />
+			</field>
+        	<field property="code" depends="required">
+        		<arg0 key="cmmnDetailCode.codeIdNm" />
+			</field>
+        	<field property="codeNm" depends="required">
+        		<arg0 key="cmmnDetailCode.codeIdNm" />
+			</field>
+        	<field property="useYn" depends="required">
+        		<arg0 key="cmmnDetailCode.useYn" />
+			</field>
+        </form>
+    </formset>
+    
+    <formset>
+        <form name="contractManageVO">
+        	<field property="custNm" depends="required">
+        		<arg0 key="ContractManageVO.custNm" />
+			</field>
+        	<field property="custFundNm" depends="required">
+        		<arg0 key="ContractManageVO.custFundNm" />
+			</field>
+        	<field property="cntrtProdCd" depends="required">
+        		<arg0 key="ContractManageVO.cntrtProdCd" />
+			</field>
+        	<field property="cntrtBgnDt" depends="required">
+        		<arg0 key="ContractManageVO.cntrtBgnDt" />
+			</field>
+        	<field property="cntrtEndDt" depends="required">
+        		<arg0 key="ContractManageVO.cntrtEndDt" />
+			</field>
+        	<field property="feeReqBase" depends="required">
+        		<arg0 key="ContractManageVO.feeReqBase" />
+			</field>
+        	<field property="feeReqBase" depends="required">
+        		<arg0 key="ContractManageVO.stockCmpyCd" />
+			</field>
+        	<field property="feeReqBase" depends="required">
+        		<arg0 key="ContractManageVO.stockMngId" />
+			</field>
+        	<field property="succFeeRt" depends="required">
+        		<arg0 key="ContractManageVO.succFeeRt" />
+			</field>
+        	<field property="kospiIdx" depends="required">
+        		<arg0 key="ContractManageVO.kospiIdx" />
+			</field>
+        	<field property="cntrtSttusCd" depends="required">
+        		<arg0 key="ContractManageVO.cntrtSttusCd" />
+			</field>
+        	<field property="feeTypeCd" depends="required">
+        		<arg0 key="ContractManageVO.feeTypeCd" />
+			</field>
+        	<field property="cntrtMngId" depends="required">
+        		<arg0 key="ContractManageVO.cntrtMngId" />
+			</field>
+        </form>
+    </formset>
+    
+    <formset>
+        <form name="corpVisitVO">
+        	<field property="corpId" depends="required">
+        		<arg0 key="corpVisitVO.corpId" />
+			</field>
+        	<field property="bizStartDt" depends="required">
+        		<arg0 key="corpVisitVO.bizStartDt" />
+			</field>
+        	<field property="bizStartTm" depends="required">
+        		<arg0 key="corpVisitVO.bizStartTm" />
+			</field>
+        	<field property="title" depends="required">
+        		<arg0 key="corpVisitVO.title" />
+			</field>
+        	<field property="bizKind" depends="required">
+        		<arg0 key="corpVisitVO.bizKind" />
+			</field>
+        	<field property="bizMethod" depends="required">
+        		<arg0 key="corpVisitVO.bizMethod" />
+			</field>
+        	<field property="bizMberId" depends="required">
+        		<arg0 key="corpVisitVO.bizMberId" />
+			</field>
+        </form>
+    </formset>
+</form-validation>
