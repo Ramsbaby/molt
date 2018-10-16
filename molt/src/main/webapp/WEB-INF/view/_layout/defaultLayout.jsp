@@ -47,20 +47,12 @@
 	<noscript class="noScriptTitle">자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
 	
 	<!-- header -->
-	<%-- <div class="header-v4">
 	<tiles:insertAttribute name="header-topbar"/>
-	<tiles:insertAttribute name="header-menu"/>
-	</div> --%>
-	<div class="">
-		<tiles:insertAttribute name="header-menu"/>
-	    
-	    <!-- body -->
-		<tiles:insertAttribute name="content"/>
-	</div>
+    
+    <!-- body -->
+	<tiles:insertAttribute name="content"/>
+	
 	<!-- footer -->
-    <%-- <div class="footer-v1">
-		<tiles:insertAttribute name="footer"/>
-	</div> --%>
 	<tiles:insertAttribute name="footer"/>
 	
 	<!-- biz js -->

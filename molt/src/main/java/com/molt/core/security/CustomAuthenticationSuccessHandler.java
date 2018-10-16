@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -20,13 +21,14 @@ import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.web.util.CookieGenerator;
 
-import com.molt.core.vo.MemberVO;
+import com.molt.core.vo.UserVO;
+import com.molt.front.login.service.LoginService;
 
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-//	@Autowired
-//	private MberService mberService;
+	@Autowired
+	private LoginService loginService;
 	
 //	@Resource(name="webLogService")
 //	private WebLogService webLogService;
@@ -94,11 +96,11 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		if("Y".equals(saveYn)){
 			CookieGenerator cookieGer = new CookieGenerator();
 			cookieGer.setCookieMaxAge(60*60*24*365);
-			cookieGer.setCookieName("SS_MBER_ID");
+			cookieGer.setCookieName("SS_USER_ID");
 			cookieGer.addCookie(response, ((User)principal).getUsername());
 		}else{
 			CookieGenerator cookieGer = new CookieGenerator();
-			cookieGer.setCookieName("SS_MBER_ID");
+			cookieGer.setCookieName("SS_USER_ID");
 			cookieGer.setCookieMaxAge(-1);
 			cookieGer.addCookie(response, request.getParameter(""));
 		}
@@ -110,13 +112,12 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		try{
 			Map paramMap = new HashMap();
 			if(principal instanceof User){
-				paramMap.put("mberId", ((User)principal).getUsername());
+				paramMap.put("userId", ((User)principal).getUsername());
 //				paramMap.put("clientCd", Constant.CLIENT_CD);
-//				MemberVO memberVO = mberService.selectMber(paramMap);
-				MemberVO memberVO = null;
+				UserVO userVO = loginService.selectUser(paramMap);
 				
-				if(memberVO != null){
-					request.getSession().setAttribute("SS_MEMBER_VO", memberVO);
+				if(userVO != null){
+					request.getSession().setAttribute("SS_MEMBER_VO", userVO);
 				}
 				
 				/**

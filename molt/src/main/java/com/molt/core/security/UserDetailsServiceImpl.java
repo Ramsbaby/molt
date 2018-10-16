@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.molt.core.vo.MemberVO;
+import com.molt.core.vo.UserVO;
+import com.molt.front.login.service.LoginService;
 
 /**
 * @class UserDetailsServiceImpl.java
@@ -35,8 +35,8 @@ import com.molt.core.vo.MemberVO;
 public class UserDetailsServiceImpl implements UserDetailsService {
 	private final static Logger logger = Logger.getLogger(UserDetailsService.class);
 	
-//	@Autowired
-//	private MberService mberService;
+	@Autowired
+	private LoginService loginService;
 
 	
 	@Autowired
@@ -80,25 +80,25 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	**/
 	protected UserDetails getUserDetailsByUserName(String userName) throws Exception {	
 		
-		MemberVO memberVO = new MemberVO();
+		UserVO userVO = new UserVO();
 		String userId;
 		String userPasswd;
 		
 		Map paramMap = new HashMap();
-		paramMap.put("mberId", userName);
+		paramMap.put("userId", userName);
 //		paramMap.put("clientCd", Constant.CLIENT_CD);
 		
-//		memberVO = mberService.selectMber(paramMap);
-		if(memberVO == null) {
+		userVO = loginService.selectUser(paramMap);
+		if(userVO == null) {
 			throw new UsernameNotFoundException("실패!!");
 		}
 
-		userPasswd = memberVO.getPassword();
+		userPasswd = userVO.getUserPwd();
 		
   		List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
-		String authorCode = memberVO.getAuthorCode();
-		
-		authList.add(new SimpleGrantedAuthority(authorCode));
+//		String authorCode = memberVO.getAuthorCode();
+//		
+//		authList.add(new SimpleGrantedAuthority(authorCode));
 		
 		return new User(userName, userPasswd, true, true, true, true, authList);
 		

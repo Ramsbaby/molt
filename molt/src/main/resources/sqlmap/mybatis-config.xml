@@ -11,6 +11,7 @@
 	</settings>
 
 	<typeAliases>
+		<typeAlias alias="userVO" 			type="com.molt.core.vo.UserVO" />
 		<!-- 공통 Vo -->
 		<!-- <typeAlias alias="memberVO" 			type="com.molt.core.vo.MemberVO" />
 		<typeAlias alias="bbsDataVO" 			type="com.molt.core.vo.BbsDataVO" />
