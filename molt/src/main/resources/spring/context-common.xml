@@ -32,7 +32,7 @@
 		</property>
 	</bean>
 	
-	<util:properties id="moltProp" location="/WEB-INF/classes/egovframework/egovProps/molt.properties" />
+	<util:properties id="moltProp" location="classpath:egovframework/egovProps/molt.properties" />
 	
 	<bean id="messageUtil" class="com.molt.core.message.MessageUtil" >
         <property name="messageSource">
