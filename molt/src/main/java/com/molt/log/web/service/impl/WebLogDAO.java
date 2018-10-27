@@ -1,11 +1,10 @@
 package com.molt.log.web.service.impl;
 
-import java.util.List;
-
-import org.springframework.stereotype.Repository;
-
 import com.molt.common.service.impl.EgovComAbstractDAO;
 import com.molt.log.web.service.WebLog;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @Class Name : WebLogDAO.java
